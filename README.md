@@ -1,0 +1,2 @@
+# guts-bot
+DiscordJS Bot
