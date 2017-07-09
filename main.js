@@ -4,6 +4,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('Logged in and ready');
+    client.setGame("(╯°□°)╯︵ ┻━┻");
 });
 
 client.on('message', msg => {
@@ -22,7 +23,8 @@ client.on('message', msg => {
 });
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find('name', 'general');
+    let channel = member.guild.channels.find('name', 'general');
+    if (!channel) return;
     channel.send(`Welcome to the server, ${member}`);
 });
 
