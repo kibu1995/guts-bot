@@ -244,3 +244,4 @@ ModelManifest.xml
 # User Ignores
 /config.json
 /package-lock.json
+/guts-bot.sln
