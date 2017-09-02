@@ -2,28 +2,19 @@
 const Config = require("./config.json");
 const client = new Discord.Client();
 const utils = require("./utils/utils.js");
+const fileHelper = require("./helpers/file.js")
+// Constant Paths/Strings
+const commandPath = require("path").join(__dirname, "commands");
+// Application Global Variables
 var commands = {};
 
-function loadCommands() {
-    let normalizedPath = require("path").join(__dirname, "commands");
-    let commandList = {};
-
-    require("fs").readdirSync(normalizedPath).forEach(function (file) {
-        let fileName = file.substring(0, file.indexOf('.'));
-        commandList[fileName] = require("./commands/" + file);
-    });
-
-    return commandList;
-}
-
-client.on('ready', function() {
-    commands = loadCommands();
+client.on('ready', function () {
+    commands = fileHelper.loadCommands(commandPath);
     console.log('Logged in and ready');
     client.user.setGame("(╯°□°)╯︵ ┻━┻");
 });
 
 client.on('message', function(msg) {
-
     if (msg.author.bot) return;
 
     if (msg.content === "help") {
