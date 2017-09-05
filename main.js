@@ -77,25 +77,4 @@ var gif = function (message, searchTerms) {
         }
     }
 }
-
-var youtube = function (message, searchTerms) {
-
-    youTube.search(searchTerms, 1, function (error, result) {
-        if (error) errorReply(error, message);
-        else {
-            if (!result || !result.items || result.items.length < 1) {
-                errorReply("No Result", message);
-            } else {
-                if (!result.items[0].id.videoId) {
-                    message.reply("Search returned a channel, please be more specific with search terms");
-                } else {
-                    message.reply("http://www.youtube.com/watch?v=" + result.items[0].id.videoId);
-                }
-            }
-        }
-    });
-}
-
-
-
  */

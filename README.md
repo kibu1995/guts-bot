@@ -20,7 +20,6 @@ DiscordJS Bot
 - RandomText
 - Respect
 - Roll
-- Search
 - Spin
 - Suggest
 - Translate
@@ -39,3 +38,4 @@ DiscordJS Bot
 - Purge
 - Say
 - Stars
+- Youtube
