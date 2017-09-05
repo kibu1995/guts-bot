@@ -1,18 +1,9 @@
-﻿const ytdl = require('ytdl-core');
+﻿const youtubeHelper = require("../helpers/youtube.js");
 
 module.exports = {
-  "description": "Replies with Pong",
-  "run": function (msg, args) {
-    let voiceChannel = msg.member.voiceChannel;
+  "description": "Plays audio from a given youtube url",
+  "run": function (msg, args) { 
     let videoUrl = args[0];
-
-    if (!voiceChannel) return msg.reply("You're not in a voice channel");
-    return voiceChannel.join()
-      .then(connnection => {
-        let stream = ytdl(videoUrl, { filter: 'audioonly' });
-        let streamOptions = { seek: 0, volume: 0.1, passes: 3 };
-        let dispatcher = connnection.playStream(stream, streamOptions);
-        dispatcher.on('end', () => voiceChannel.leave());
-      });
+    return youtubeHelper.playAudio(msg, videoUrl);
   }
 }
