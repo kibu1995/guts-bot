@@ -5,18 +5,21 @@ const Config = require("../config.json");
 var youTube = new YouTube();
 youTube.setKey(Config.youtubeKey);
 
+var dispatcher;
+
 module.exports = {
   "playAudio": function (msg, videoUrl) {
     let voiceChannel = msg.member.voiceChannel;
     if (!voiceChannel) return msg.reply("You're not in a voice channel");
     if (!/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/.test(videoUrl)) return msg.reply("Check the link is correct");
 
+    if (dispatcher !== undefined && dispatcher.destroyed == false) dispatcher.end();
+
     return voiceChannel.join()
       .then(connnection => {
         let stream = ytdl(videoUrl, { filter: 'audioonly' });
         let streamOptions = { seek: 0, volume: 0.1, passes: 3 };
-        let dispatcher = connnection.playStream(stream, streamOptions);
-        dispatcher.on('end', () => voiceChannel.leave());
+        dispatcher = connnection.playStream(stream, streamOptions);
       });
   },
   "search": function (msg, searchTerms) {
@@ -34,5 +37,13 @@ module.exports = {
         }
       }
     });
+  },
+  "endAudio": function (msg) {
+    if (dispatcher !== undefined && dispatcher.destroyed == false) {
+      dispatcher.end();
+      return msg.reply("Ended the song!");
+    } else {
+      return msg.reply("Nothing is playing!");
+    }
   }
 }
