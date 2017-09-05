@@ -5,7 +5,7 @@ DiscordJS Bot
 
 - About
 - Bullshit
-- Cat
+
 - CatFacts
 - Choose
 - Cleverbot
@@ -21,7 +21,6 @@ DiscordJS Bot
 - RandomText
 - Respect
 - Roll
-- SayD
 - Search
 - Spin
 - Suggest
@@ -31,8 +30,12 @@ DiscordJS Bot
 
 ## Functions List (DONE)
 
-- Ping
-- Say
-- Purge
-- Kick
 - Ban
+- Cat
+- Dog
+- Kick
+- Ping
+- Play
+- Purge
+- Say
+- Stars
