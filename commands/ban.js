@@ -1,7 +1,7 @@
 ﻿module.exports = {
   "description": "Bans a given user",
   "run": function (msg, args) {
-    if (!msg.member.roles.some(r=>["Admin", "Mod"].includes(r.name))) {
+    if (!msg.member.roles.some(r=>["Mod"].includes(r.name))) {
       return msg.reply("Need correct roles to use this");
     }
     

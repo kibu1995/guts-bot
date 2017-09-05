@@ -26,25 +26,3 @@ client.on('message', function(msg) {
 });
 
 client.login(Config.token);
-
-/*
-var gif = function (message, searchTerms) {
-
-    Giphy.search({
-        q: searchTerms,
-        limit: 1,
-        rating: 'r',
-        fmt: 'json'
-    }).then(outputGif).catch(function (error) {
-        errorReply(error, message);
-    });
-
-    function outputGif(res) {
-        if (res.data[0]) {
-            message.reply(res.data[0].url);
-        } else {
-            errorReply("No Result", message);
-        }
-    }
-}
- */

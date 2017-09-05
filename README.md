@@ -11,7 +11,6 @@ DiscordJS Bot
 - CurrencyConverter
 - FunInsult
 - Gamble (Blackjack, Roulette, Slots, Race)
-- Gif
 - Insult
 - Lenny
 - Money
@@ -31,6 +30,7 @@ DiscordJS Bot
 - Cat
 - Dog
 - Flip
+- Gif
 - Kick
 - Meme
 - Ping
