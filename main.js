@@ -33,27 +33,6 @@ var bwekfast = function (message) {
     if (message.member.roles.find("name", "Moderator")) playYoutubeAudio(message, "https://www.youtube.com/watch?v=3Dj6Swg4Rks");
 }
 
- var cat = function (message) {
-    getContent('http://random.cat/meow').then(outputCat).catch(function (error) {
-        errorReply(error, message);
-    });
-
-    function outputCat(res) {
-        var catResp = JSON.parse(res);
-        message.reply(catResp.file);
-    }
-}
-
-var dog = function (message) {
-    getContent('http://random.dog/woof').then(outputDog).catch(function (error) {
-        errorReply(error, message);
-    });
-
-    function outputDog(res) {
-        message.reply("http://random.dog/" + res);
-    }
-}
-
 var flip = function (message) {
 
     var coinFlip = 1 + Math.floor(Math.random() * 2);
