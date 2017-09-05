@@ -8,8 +8,10 @@ youTube.setKey(Config.youtubeKey);
 var dispatcher;
 
 module.exports = {
-  "playAudio": function (msg, videoUrl) {
+  "playAudio": function (msg, videoUrl, volumeNo) {
     let voiceChannel = msg.member.voiceChannel;
+    let streamVolume = 0.1;
+    if (volumeNo) streamVolume = volumeNo / 100;
     if (!voiceChannel) return msg.reply("You're not in a voice channel");
     if (!/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/.test(videoUrl)) return msg.reply("Check the link is correct");
 
@@ -18,7 +20,7 @@ module.exports = {
     return voiceChannel.join()
       .then(connnection => {
         let stream = ytdl(videoUrl, { filter: 'audioonly' });
-        let streamOptions = { seek: 0, volume: 0.1, passes: 3 };
+        let streamOptions = { seek: 0, volume: streamVolume, passes: 3 };
         dispatcher = connnection.playStream(stream, streamOptions);
       });
   },
