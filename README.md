@@ -22,6 +22,10 @@ DiscordJS Bot
 - Translate
 - Uptime
 - Weather
+- - -
+- AddMeme
+- RandomMeme
+- ListMemes
 
 ## Functions List (DONE)
 
@@ -33,6 +37,7 @@ DiscordJS Bot
 - Gif
 - Kick
 - Meme
+- Music
 - Ping
 - Play
 - Purge
