@@ -33,9 +33,11 @@ DiscordJS Bot
 - Cat
 - Dog
 - Kick
+- Meme
 - Ping
 - Play
 - Purge
 - Say
+- Spicy
 - Stars
 - Youtube
