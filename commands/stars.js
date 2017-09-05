@@ -3,6 +3,7 @@
 module.exports = {
   "description": "Plays shooting stars",
   "run": function (msg) {
-    return youtubeHelper.playAudio(msg, "https://www.youtube.com/watch?v=_2GVaKUTyQ0");
+    let shootingStars = "https://www.youtube.com/watch?v=feA64wXhbjo"
+    return youtubeHelper.playAudio(msg, shootingStars);
   }
 }

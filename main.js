@@ -26,3 +26,116 @@ client.on('message', function(msg) {
 });
 
 client.login(Config.token);
+
+/*
+
+var getContent = function (url) {
+    return new Promise((resolve, reject) => {
+        const lib = url.startsWith('https') ? require('https') : require('http');
+        const request = lib.get(url, (response) => {
+
+            if (response.statusCode < 200 || response.statusCode > 299) reject(new Error('Failed to load page, status code: ' + response.statusCode));
+            const body = [];
+            response.on('data', (chunk) => body.push(chunk));
+            response.on('end', () => resolve(body.join('')));
+
+        });
+        request.on('error', (err) => reject(err));
+    });
+}
+
+var bwekfast = function (message) {
+    if (message.member.roles.find("name", "Moderator")) playYoutubeAudio(message, "https://www.youtube.com/watch?v=3Dj6Swg4Rks");
+}
+
+ var cat = function (message) {
+    getContent('http://random.cat/meow').then(outputCat).catch(function (error) {
+        errorReply(error, message);
+    });
+
+    function outputCat(res) {
+        var catResp = JSON.parse(res);
+        message.reply(catResp.file);
+    }
+}
+
+var dog = function (message) {
+    getContent('http://random.dog/woof').then(outputDog).catch(function (error) {
+        errorReply(error, message);
+    });
+
+    function outputDog(res) {
+        message.reply("http://random.dog/" + res);
+    }
+}
+
+var flip = function (message) {
+
+    var coinFlip = 1 + Math.floor(Math.random() * 2);
+
+    if (coinFlip == 1) {
+
+        message.reply("Coin landed on HEADS");
+
+    } else if (coinFlip == 2) {
+
+        message.reply("Coin landed on TAILS");
+    }
+}
+
+var meme = function (message) {
+    message.channel.sendMessage("http://i.imgur.com/KsYpXaP.gifv");
+}
+
+var spicy = function (message) {
+    message.channel.sendMessage("https://www.youtube.com/watch?v=rhC9KVo7S0c&feature=youtu.be");
+    if (message.member.roles.find("name", "Moderator")) playYoutubeAudio(message, "https://www.youtube.com/watch?v=rhC9KVo7S0c");
+}
+
+var roll = function (message, sides) {
+
+    var diceRoll = 1 + Math.floor(Math.random() * sides);
+    message.reply("You rolled a " + diceRoll);
+}
+
+var gif = function (message, searchTerms) {
+
+    Giphy.search({
+        q: searchTerms,
+        limit: 1,
+        rating: 'r',
+        fmt: 'json'
+    }).then(outputGif).catch(function (error) {
+        errorReply(error, message);
+    });
+
+    function outputGif(res) {
+        if (res.data[0]) {
+            message.reply(res.data[0].url);
+        } else {
+            errorReply("No Result", message);
+        }
+    }
+}
+
+var youtube = function (message, searchTerms) {
+
+    youTube.search(searchTerms, 1, function (error, result) {
+        if (error) errorReply(error, message);
+        else {
+            if (!result || !result.items || result.items.length < 1) {
+                errorReply("No Result", message);
+            } else {
+                if (!result.items[0].id.videoId) {
+                    message.reply("Search returned a channel, please be more specific with search terms");
+                } else {
+                    message.reply("http://www.youtube.com/watch?v=" + result.items[0].id.videoId);
+                }
+            }
+        }
+    });
+}
+
+
+
+ */
