@@ -16,7 +16,7 @@ module.exports = {
 
         Object.keys(commands).forEach(function (key) {
             helpMessage += '\n';
-            helpMessage += key + " : " + commands[key].description;
+            helpMessage += Config.prefix + key + " : " + commands[key].description;
         });
 
         msg.reply(helpMessage);
