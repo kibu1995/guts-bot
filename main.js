@@ -16,18 +16,13 @@ client.on('ready', function () {
 
 client.on('message', function(msg) {
     if (msg.author.bot) return;
+    if (!msg.content.startsWith(Config.prefix)) return;
 
-    if (msg.content === "help") {
+    if (msg.content === "!help") {
         utils.help(commands, msg);
     } else {
         utils.runCommand(commands, msg);
     }
-});
-
-client.on('guildMemberAdd', function(member) {
-    let channel = member.guild.channels.find('name', 'general');
-    if (!channel) return;
-    channel.send(`Welcome to the server, ${member}`);
 });
 
 client.login(Config.token);

@@ -1,8 +1,12 @@
-﻿module.exports = {
+﻿const Config = require("../config.json");
+
+module.exports = {
     runCommand: function (commands, msg) {
-        if (commands[msg.content]) {
-            // Check if user can use command (is admin / has role)
-            commands[msg.content].run(msg);
+        let args = msg.content.slice(Config.prefix.length).trim().split(/ +/g);
+        let command = args.shift().toLowerCase();
+
+        if (commands[command]) {
+          commands[command].run(msg, args);
         } else {
             msg.reply("Not a function");
         }
