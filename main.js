@@ -43,15 +43,6 @@ var flip = function (message) {
     }
 }
 
-var meme = function (message) {
-    message.channel.sendMessage("http://i.imgur.com/KsYpXaP.gifv");
-}
-
-var spicy = function (message) {
-    message.channel.sendMessage("https://www.youtube.com/watch?v=rhC9KVo7S0c&feature=youtu.be");
-    if (message.member.roles.find("name", "Moderator")) playYoutubeAudio(message, "https://www.youtube.com/watch?v=rhC9KVo7S0c");
-}
-
 var roll = function (message, sides) {
 
     var diceRoll = 1 + Math.floor(Math.random() * sides);
