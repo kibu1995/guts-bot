@@ -28,27 +28,6 @@ client.on('message', function(msg) {
 client.login(Config.token);
 
 /*
-
-var flip = function (message) {
-
-    var coinFlip = 1 + Math.floor(Math.random() * 2);
-
-    if (coinFlip == 1) {
-
-        message.reply("Coin landed on HEADS");
-
-    } else if (coinFlip == 2) {
-
-        message.reply("Coin landed on TAILS");
-    }
-}
-
-var roll = function (message, sides) {
-
-    var diceRoll = 1 + Math.floor(Math.random() * sides);
-    message.reply("You rolled a " + diceRoll);
-}
-
 var gif = function (message, searchTerms) {
 
     Giphy.search({

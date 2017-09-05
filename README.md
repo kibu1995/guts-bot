@@ -8,7 +8,6 @@ DiscordJS Bot
 - CatFacts
 - Choose
 - Cleverbot
-- CoinFlip
 - CurrencyConverter
 - FunInsult
 - Gamble (Blackjack, Roulette, Slots, Race)
@@ -19,7 +18,6 @@ DiscordJS Bot
 - OldInsult
 - RandomText
 - Respect
-- Roll
 - Spin
 - Suggest
 - Translate
@@ -32,11 +30,13 @@ DiscordJS Bot
 - Bwekfast
 - Cat
 - Dog
+- Flip
 - Kick
 - Meme
 - Ping
 - Play
 - Purge
+- Roll
 - Say
 - Spicy
 - Stars
