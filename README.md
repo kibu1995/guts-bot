@@ -1,4 +1,4 @@
-# guts-bot
+# Jonny-Bot (Was guts-bot)
 DiscordJS Bot
 
 ## Functions List (TO-DO)
