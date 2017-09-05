@@ -1,10 +1,9 @@
 # guts-bot
 DiscordJS Bot
 
-## Functions List (Including To-Do's)
+## Functions List (TO-DO)
 
 - About
-- Ban
 - Bullshit
 - Cat
 - CatFacts
@@ -16,15 +15,12 @@ DiscordJS Bot
 - Gamble (Blackjack, Roulette, Slots, Race)
 - Gif
 - Insult
-- Kick
 - Lenny
 - Money
 - OldInsult
-- Prune
 - RandomText
 - Respect
 - Roll
-- Say
 - SayD
 - Search
 - Spin
@@ -32,3 +28,11 @@ DiscordJS Bot
 - Translate
 - Uptime
 - Weather
+
+## Functions List (DONE)
+
+- Ping
+- Say
+- Purge
+- Kick
+- Ban
