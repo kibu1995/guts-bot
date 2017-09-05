@@ -29,10 +29,6 @@ client.login(Config.token);
 
 /*
 
-var bwekfast = function (message) {
-    if (message.member.roles.find("name", "Moderator")) playYoutubeAudio(message, "https://www.youtube.com/watch?v=3Dj6Swg4Rks");
-}
-
 var flip = function (message) {
 
     var coinFlip = 1 + Math.floor(Math.random() * 2);

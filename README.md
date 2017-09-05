@@ -5,7 +5,6 @@ DiscordJS Bot
 
 - About
 - Bullshit
-
 - CatFacts
 - Choose
 - Cleverbot
@@ -31,6 +30,7 @@ DiscordJS Bot
 ## Functions List (DONE)
 
 - Ban
+- Bwekfast
 - Cat
 - Dog
 - Kick
