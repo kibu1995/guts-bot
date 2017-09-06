@@ -5,7 +5,7 @@ module.exports = {
   "run": function (msg) {
     let videoUrl = "https://www.youtube.com/watch?v=rhC9KVo7S0c";
 
-    if (msg.member.roles.some(r=>["Admin, Bot"].includes(r.name))) {
+    if (msg.member.roles.some(r=>["Admin", "Bot"].includes(r.name))) {
       return youtubeHelper.playAudio(msg, "https://www.youtube.com/watch?v=rhC9KVo7S0c");
     } else {
       return msg.channel.send(videoUrl);

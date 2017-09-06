@@ -1,7 +1,7 @@
 ﻿module.exports = {
   "description": "Deletes a given number of messages",
   "run": function (msg, args) {
-    if (!msg.member.roles.some(r=>["Admin, Bot"].includes(r.name))) {
+    if (!msg.member.roles.some(r=>["Admin", "Bot"].includes(r.name))) {
       return msg.reply("Need correct roles to use this");
     }
     let deleteNo = parseInt(args[0], 10);
