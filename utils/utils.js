@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   help: function (commands, msg) {
-    let helpMessage = "```xl\n";
+    let helpMessage = "```\n";
 
     Object.keys(commands).forEach(function (key) {
       helpMessage += '\n';
