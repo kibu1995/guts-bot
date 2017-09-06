@@ -2,6 +2,7 @@
 const yt = require('ytdl-core');
 const musicPrefix = "!music ";
 const dispPrefix = "¬";
+const volumePercentJump = 5;
 
 var play = function (msg) {
   if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with ${musicPrefix}add`);
@@ -28,11 +29,11 @@ var play = function (msg) {
         msg.channel.send('skipped').then(() => { dispatcher.end(); });
       } else if (m.content.startsWith(dispPrefix + 'volume+')) {
         if (Math.round(dispatcher.volume * 50) >= 100) return msg.channel.send(`Volume: ${Math.round(dispatcher.volume * 50)}%`);
-        dispatcher.setVolume(Math.min((dispatcher.volume * 50 + (2 * (m.content.split('+').length - 1))) / 50, 2));
+        dispatcher.setVolume(Math.min((dispatcher.volume * 50 + (volumePercentJump * (m.content.split('+').length - 1))) / 50, 2));
         msg.channel.send(`Volume: ${Math.round(dispatcher.volume * 50)}%`);
       } else if (m.content.startsWith(dispPrefix + 'volume-')) {
         if (Math.round(dispatcher.volume * 50) <= 0) return msg.channel.send(`Volume: ${Math.round(dispatcher.volume * 50)}%`);
-        dispatcher.setVolume(Math.max((dispatcher.volume * 50 - (2 * (m.content.split('-').length - 1))) / 50, 0));
+        dispatcher.setVolume(Math.max((dispatcher.volume * 50 - (volumePercentJump * (m.content.split('-').length - 1))) / 50, 0));
         msg.channel.send(`Volume: ${Math.round(dispatcher.volume * 50)}%`);
       } else if (m.content.startsWith(dispPrefix + 'time')) {
         msg.channel.send(`time: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000) / 1000) < 10 ? '0' + Math.floor((dispatcher.time % 60000) / 1000) : Math.floor((dispatcher.time % 60000) / 1000)}`);
@@ -92,8 +93,8 @@ var help = function (msg) {
     dispPrefix + 'resume : "resumes the music"',
     dispPrefix + 'skip : "skips the playing song"',
     dispPrefix + 'time : "Shows the playtime of the song."',
-    dispPrefix + 'volume+(+++) : "increases volume by 2%/+"',
-    dispPrefix + 'volume-(---) : "decreases volume by 2%/-"', '```'];
+    dispPrefix + 'volume+(+++) : "increases volume by ' + volumePercentJump + '%/+"',
+    dispPrefix + 'volume-(---) : "decreases volume by ' + volumePercentJump + '%/-"', '```'];
   msg.channel.send(tosend.join('\n'));
 }
 
