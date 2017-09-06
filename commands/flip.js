@@ -1,5 +1,5 @@
 ﻿module.exports = {
-  "description": "Flips a coin, replies with result.",
+  "description": "Flips a coin, replies with result",
   "run": function (msg) {
     var coinFlip = 1 + Math.floor(Math.random() * 2);
 
