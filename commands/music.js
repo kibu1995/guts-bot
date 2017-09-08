@@ -15,7 +15,6 @@ var play = function (msg) {
   (function play(song) {
     if (song === undefined) return msg.channel.send('Queue is empty').then(() => {
       queue[msg.guild.id].playing = false;
-      voiceChannel.leave();
     });
     msg.channel.send(`Playing: **${song.title}** requested by: **${song.requester}**`);
     dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true, quality: "lowest" }), { passes: 3, volume: 0.1, seek: 0 });
@@ -70,6 +69,7 @@ var add = function (msg, videoUrl) {
     if (err) return msg.channel.send('Invalid YouTube Link: ' + err);
     if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
     queue[msg.guild.id].songs.push({ url: url, title: info.title, requester: msg.author.username });
+    msg.delete().catch(console.error);
     msg.channel.send(`added **${info.title}** to the queue`);
   });
 }

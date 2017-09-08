@@ -3,7 +3,6 @@ DiscordJS Bot
 
 ## Functions List (TO-DO)
 
-- About
 - Bullshit
 - CatFacts
 - Choose
@@ -19,13 +18,7 @@ DiscordJS Bot
 - Respect
 - Spin
 - Suggest
-- Translate
-- Uptime
 - Weather
-- - -
-- AddMeme
-- RandomMeme
-- ListMemes
 
 ## Functions List (DONE)
 
@@ -35,6 +28,7 @@ DiscordJS Bot
 - Dog
 - Flip
 - Gif
+- Introduce
 - Kick
 - Meme
 - Music
@@ -46,3 +40,7 @@ DiscordJS Bot
 - Spicy
 - Stars
 - Youtube
+- - - -
+- AddMeme
+- RandomMeme
+- ListMemes
